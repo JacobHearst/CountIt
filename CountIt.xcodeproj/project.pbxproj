@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3767052AB9EC3200D5C189 /* CounterEditor.swift */; };
 		2A8423EF2AB0974A00D9A8A3 /* CountItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */; };
 		2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F02AB0974A00D9A8A3 /* ContentView.swift */; };
 		2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F22AB0974A00D9A8A3 /* Counter.swift */; };
@@ -49,6 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2A69F70F2AC08B44000AF5B0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A8424342AB09FD300D9A8A3 /* Embed ExtensionKit Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +74,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A3767052AB9EC3200D5C189 /* CounterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEditor.swift; sourceTree = "<group>"; };
+		2A69F6FE2AC08B44000AF5B0 /* CountItWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		2A69F7082AC08B44000AF5B0 /* CountItWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		2A69F70A2AC08B44000AF5B0 /* CountItWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A8423EB2AB0974A00D9A8A3 /* CountIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItApp.swift; sourceTree = "<group>"; };
 		2A8423F02AB0974A00D9A8A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +133,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A69F6FD2AC08B44000AF5B0 /* CountItWatch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A69F6FE2AC08B44000AF5B0 /* CountItWatch_Watch_AppTests.swift */,
+			);
+			path = "CountItWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		2A69F7072AC08B44000AF5B0 /* CountItWatch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A69F7082AC08B44000AF5B0 /* CountItWatch_Watch_AppUITests.swift */,
+				2A69F70A2AC08B44000AF5B0 /* CountItWatch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "CountItWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		2A8423E22AB0974A00D9A8A3 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +157,8 @@
 				2A8424022AB0974D00D9A8A3 /* CountItTests */,
 				2A84240C2AB0974D00D9A8A3 /* CountItUITests */,
 				2AFF56212AB0A35B00D251DD /* CounterIntents */,
+				2A69F6FD2AC08B44000AF5B0 /* CountItWatch Watch AppTests */,
+				2A69F7072AC08B44000AF5B0 /* CountItWatch Watch AppUITests */,
 				2A8423EC2AB0974A00D9A8A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -185,6 +219,7 @@
 			children = (
 				2A8423F02AB0974A00D9A8A3 /* ContentView.swift */,
 				2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */,
+				2A3767052AB9EC3200D5C189 /* CounterEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +263,7 @@
 				2A8423E82AB0974A00D9A8A3 /* Frameworks */,
 				2A8423E92AB0974A00D9A8A3 /* Resources */,
 				2A8424342AB09FD300D9A8A3 /* Embed ExtensionKit Extensions */,
+				2A69F70F2AC08B44000AF5B0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -377,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */,
 				2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */,
 				2A84241F2AB099B800D9A8A3 /* Color+random.swift in Sources */,
 				2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */,

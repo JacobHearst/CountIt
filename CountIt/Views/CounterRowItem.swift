@@ -9,11 +9,10 @@ struct CounterRowItem: View {
 
     var body: some View {
         HStack {
-            Button {
-                counter.count -= 1
-            } label: {
+            Button(action: counter.decrement) {
                 Image(systemName: "minus")
                     .frame(width: 20, height: 20)
+                    .help("Decrement the counter")
             }
 
             Spacer()
@@ -25,11 +24,10 @@ struct CounterRowItem: View {
 
             Spacer()
 
-            Button {
-                counter.count += 1
-            } label: {
+            Button(action: counter.increment) {
                 Image(systemName: "plus")
                     .frame(width: 20, height: 20)
+                    .help("Increment the counter")
             }
         }
         .buttonStyle(.borderedProminent)

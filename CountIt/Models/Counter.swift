@@ -7,15 +7,27 @@ import SwiftData
 
 @Model
 final class Counter {
-    var id: UUID
-    var timestamp: Date
-    var count: Int
-    var name: String
+    let id: UUID
+    let timestamp: Date
 
-    init(timestamp: Date = Date(), count: Int = 0, name: String, id: UUID = UUID()) {
+    var name: String
+    var incrementStep: Int
+
+    private(set) var count: Int
+
+    init(name: String, incrementStep: Int = 1, timestamp: Date = Date(), count: Int = 0, id: UUID = UUID()) {
+        self.name = name
+        self.incrementStep = incrementStep
         self.timestamp = timestamp
         self.count = count
-        self.name = name
         self.id = id
+    }
+
+    func increment() {
+        count += incrementStep
+    }
+
+    func decrement() {
+        count -= incrementStep
     }
 }

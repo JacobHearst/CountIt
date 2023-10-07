@@ -3,7 +3,7 @@
 //
 
 import AppIntents
-    
+
 struct IncrementCounterIntent: AppIntent {
     static var title: LocalizedStringResource = "Increment Counter"
     @Parameter(title: "Name", optionsProvider: CounterOptionsProvider()) var name: String
@@ -15,7 +15,7 @@ struct IncrementCounterIntent: AppIntent {
             return .result(value: 0)
         }
 
-        counter.count += 1
+        counter.increment()
         try provider.context.save()
         return .result(value: counter.count)
     }

@@ -8,8 +8,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var counters: [Counter]
-    @State private var showCreateListAlert = false
-    @State private var newCounterName = ""
+    @State private var showCounterEditor = false
 
     var body: some View {
         NavigationStack {
@@ -24,36 +23,41 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button {
-                        showCreateListAlert = true
-                    } label: {
-                        Label("Create a counter", systemImage: "plus")
+                    AddCounterButton(isActive: $showCounterEditor)
+                }
+            }
+            .sheet(isPresented: $showCounterEditor) {
+                CounterEditor(counter: nil)
+            }
+            .overlay {
+                if counters.isEmpty {
+                    ContentUnavailableView {
+                        Label("No counters found", systemImage: "questionmark.circle")
+                    } description: {
+                        AddCounterButton(isActive: $showCounterEditor)
                     }
                 }
             }
-            .alert("Create a counter", isPresented: $showCreateListAlert) {
-                TextField("Name", text: $newCounterName)
-                Button("Create", action: addItem)
-                Button("Cancel", role: .cancel) {
-                    newCounterName = ""
-                }
-            }
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Counter(name: newCounterName)
-            modelContext.insert(newItem)
-        }
-
-        newCounterName = ""
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 modelContext.delete(counters[index])
+            }
+        }
+    }
+
+    private struct AddCounterButton: View {
+        @Binding var isActive: Bool
+
+        var body: some View {
+            Button {
+                isActive = true
+            } label: {
+                Label("Create a counter", systemImage: "plus")
+                    .help("Create a counter")
             }
         }
     }
