@@ -5,11 +5,14 @@
 import SwiftUI
 
 struct CounterEditor: View {
+    @Environment(\.self) private var environment
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
     @State private var name = ""
     @State private var increment = 1
+    @State private var interval: Counter.Interval = .Never
+    @State private var color = Color.random()
 
     let counter: Counter?
 
@@ -31,6 +34,15 @@ struct CounterEditor: View {
                         }
                     }
                 }
+                Section("Optional") {
+                    Picker("Reset count every:", selection: $interval) {
+                        ForEach(Counter.Interval.allCases, id: \.rawValue) {
+                            Text($0.rawValue).tag($0)
+                        }
+                    }
+
+                    ColorPicker("Counter color", selection: $color, supportsOpacity: false)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -50,27 +62,37 @@ struct CounterEditor: View {
                     }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             if let counter {
                 name = counter.name
                 increment = counter.incrementStep
+                color = counter.color
+                interval = counter.interval
             }
         }
     }
 
     private func save() {
+        let colorComponents = color.resolve(in: environment)
+
         if let counter {
-            // Edit the animal.
+            // Edit the counter
             counter.name = name
             counter.incrementStep = increment
+            counter.interval = interval
+            counter.red = colorComponents.red
+            counter.blue = colorComponents.blue
+            counter.green = colorComponents.green
         } else {
-            let newCounter = Counter(name: name, incrementStep: increment)
+            // Make a new counter
+            let newCounter = Counter(name: name, incrementStep: increment, interval: interval, colorComponents: colorComponents)
             modelContext.insert(newCounter)
         }
     }
 
 }
 
-#Preview {
+#Preview("Create new") {
     CounterEditor(counter: nil)
 }

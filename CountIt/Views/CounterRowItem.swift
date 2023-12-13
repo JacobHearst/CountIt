@@ -3,37 +3,57 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CounterRowItem: View {
+    @Environment(\.modelContext) private var modelContext
     @Bindable var counter: Counter
+    private var counterEvents: Query<CounterChangeEvent, [CounterChangeEvent]>
+    private let foregroundColor: Color
+
+    init(counter: Counter) {
+        self.counter = counter
+        self.counterEvents = Query(filter: counter.changeEventPredicate)
+        foregroundColor = counter.color.isDark ? .white : .black
+    }
 
     var body: some View {
-        HStack {
-            Button(action: counter.decrement) {
-                Image(systemName: "minus")
-                    .frame(width: 20, height: 20)
-                    .help("Decrement the counter")
-            }
+        Group {
+            GeometryReader { geometry in
+                HStack {
+                    Image(systemName: "minus")
+                        .help("Decrement the counter")
 
-            Spacer()
+                    Spacer()
 
-            VStack {
-                Text(counter.name)
-                Text(counter.count.description)
-            }
+                    VStack {
+                        Text(counter.name)
+                            .font(.headline)
+                        Text(counter.count.description)
+                    }
 
-            Spacer()
+                    Spacer()
 
-            Button(action: counter.increment) {
-                Image(systemName: "plus")
-                    .frame(width: 20, height: 20)
-                    .help("Increment the counter")
+                    Image(systemName: "plus")
+                        .help("Increment the counter")
+                }
+                .contentShape(RoundedRectangle(cornerRadius: 5))
+                .foregroundStyle(foregroundColor)
+                .onTapGesture { location in
+                    if location.x < geometry.size.width / 2 {
+                        counter.decrement()
+                    } else {
+                        counter.increment()
+                    }
+                }
             }
         }
-        .buttonStyle(.borderedProminent)
+        .listRowBackground(counter.color)
+        .padding(20)
+        .padding(.bottom)
     }
 }
 
 #Preview {
-    CounterRowItem(counter: Counter(name: "Test"))
+    CounterRowItem(counter: Counter(name: "Test", colorComponents: Color.red.resolve(in: .init())))
 }
