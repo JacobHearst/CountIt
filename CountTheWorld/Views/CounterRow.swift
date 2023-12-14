@@ -5,10 +5,10 @@
 import SwiftUI
 import SwiftData
 
-struct CounterRowItem: View {
+struct CounterRow: View {
     @Environment(\.modelContext) private var modelContext
     @Bindable var counter: Counter
-    private var counterEvents: Query<CounterChangeEvent, [CounterChangeEvent]>
+    private var counterEvents: Query<Counter.ChangeEvent, [Counter.ChangeEvent]>
     private let foregroundColor: Color
 
     init(counter: Counter) {
@@ -44,7 +44,8 @@ struct CounterRowItem: View {
                 .contentShape(RoundedRectangle(cornerRadius: 5))
                 .foregroundStyle(foregroundColor)
                 .onTapGesture {
-                    increment(isNegative: $0.x <= geometry.size.width / 2)
+                    let direction: Counter.IncrementDirection = $0.x <= geometry.size.width / 2 ? .down : .up
+                    increment(direction: direction)
                 }
             }
         }
@@ -53,12 +54,19 @@ struct CounterRowItem: View {
         .padding(.bottom)
     }
 
-    private func increment(isNegative: Bool) {
-        counter.count += isNegative && !counter.disallowSubtraction ? -1 * counter.incrementStep : counter.incrementStep
-        modelContext.insert(CounterChangeEvent(counter: counter, newValue: counter.count))
+    private func increment(direction: Counter.IncrementDirection) {
+        switch direction {
+        case .up:
+            counter.count += counter.incrementStep
+        case .down:
+            guard !counter.disallowSubtraction else { return }
+            counter.count -= counter.incrementStep
+        }
+
+        modelContext.insert(Counter.ChangeEvent(counter: counter, newValue: counter.count))
     }
 }
 
 #Preview {
-    CounterRowItem(counter: Counter(name: "Test", colorComponents: Color.red.resolve(in: .init())))
+    CounterRow(counter: Counter(name: "Test", colorComponents: Color.red.resolve(in: .init())))
 }

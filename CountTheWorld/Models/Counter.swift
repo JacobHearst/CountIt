@@ -24,7 +24,7 @@ final class Counter {
         Color(red: Double(red), green: Double(green), blue: Double(blue))
     }
 
-    var changeEventPredicate: Predicate<CounterChangeEvent> {
+    var changeEventPredicate: Predicate<ChangeEvent> {
         let now = Date()
         switch interval {
         case .Never:
@@ -51,8 +51,8 @@ final class Counter {
 
     var count: Int
 
-    @Relationship(deleteRule: .cascade, inverse: \CounterChangeEvent.counter)
-    private(set) var history = [CounterChangeEvent]()
+    @Relationship(deleteRule: .cascade, inverse: \ChangeEvent.counter)
+    private(set) var history = [ChangeEvent]()
 
     init(
         name: String,
@@ -78,5 +78,9 @@ final class Counter {
 
     enum Interval: String, CaseIterable, Codable {
         case Never, Day, Week, Month, Year
+    }
+
+    enum IncrementDirection {
+        case up, down
     }
 }

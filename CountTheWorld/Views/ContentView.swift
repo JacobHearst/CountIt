@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(counters) { counter in
-                    CounterRowItem(counter: counter)
+                    CounterRow(counter: counter)
                         .contextMenu {
                             Button("Edit") {
                                 selectedCounter = counter

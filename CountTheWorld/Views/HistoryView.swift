@@ -10,7 +10,7 @@ struct HistoryView: View {
     @State private var listMode = false
 
     private var counter: Counter
-    private var timeline: [CounterChangeEvent]
+    private var timeline: [Counter.ChangeEvent]
 
     init(counter: Counter) {
         self.counter = counter

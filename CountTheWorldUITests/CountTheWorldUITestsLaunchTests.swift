@@ -1,10 +1,10 @@
 //
-// CountItUITestsLaunchTests.swift
+// CountTheWorldUITestsLaunchTests.swift
 //
 
 import XCTest
 
-final class CountItUITestsLaunchTests: XCTestCase {
+final class CountTheWorldUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -10,15 +10,15 @@
 		2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */; };
 		2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3767052AB9EC3200D5C189 /* CounterEditor.swift */; };
 		2A4AD6F52AD21BF3003D3A5D /* CounterChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */; };
-		2A8423EF2AB0974A00D9A8A3 /* CountItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */; };
+		2A8423EF2AB0974A00D9A8A3 /* CountTheWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423EE2AB0974A00D9A8A3 /* CountTheWorldApp.swift */; };
 		2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F02AB0974A00D9A8A3 /* ContentView.swift */; };
 		2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F22AB0974A00D9A8A3 /* Counter.swift */; };
 		2A8423F52AB0974C00D9A8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8423F42AB0974C00D9A8A3 /* Assets.xcassets */; };
 		2A8423F82AB0974C00D9A8A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8423F72AB0974C00D9A8A3 /* Preview Assets.xcassets */; };
-		2A8424042AB0974D00D9A8A3 /* CountItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8424032AB0974D00D9A8A3 /* CountItTests.swift */; };
-		2A84240E2AB0974D00D9A8A3 /* CountItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84240D2AB0974D00D9A8A3 /* CountItUITests.swift */; };
-		2A8424102AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84240F2AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift */; };
-		2A84241D2AB0988800D9A8A3 /* CounterRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */; };
+		2A8424042AB0974D00D9A8A3 /* CountTheWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8424032AB0974D00D9A8A3 /* CountTheWorldTests.swift */; };
+		2A84240E2AB0974D00D9A8A3 /* CountTheWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84240D2AB0974D00D9A8A3 /* CountTheWorldUITests.swift */; };
+		2A8424102AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84240F2AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift */; };
+		2A84241D2AB0988800D9A8A3 /* CounterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241C2AB0988800D9A8A3 /* CounterRow.swift */; };
 		2A84241F2AB099B800D9A8A3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241E2AB099B800D9A8A3 /* Color.swift */; };
 		2ABCAACC2AED76F500FC1DB8 /* Date+CalendarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */; };
 /* End PBXBuildFile section */
@@ -29,14 +29,14 @@
 			containerPortal = 2A8423E32AB0974A00D9A8A3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2A8423EA2AB0974A00D9A8A3;
-			remoteInfo = CountIt;
+			remoteInfo = CountTheWorld;
 		};
 		2A84240A2AB0974D00D9A8A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A8423E32AB0974A00D9A8A3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2A8423EA2AB0974A00D9A8A3;
-			remoteInfo = CountIt;
+			remoteInfo = CountTheWorld;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,20 +67,20 @@
 		2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A3767052AB9EC3200D5C189 /* CounterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEditor.swift; sourceTree = "<group>"; };
 		2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterChangeEvent.swift; sourceTree = "<group>"; };
-		2A8423EB2AB0974A00D9A8A3 /* CountIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItApp.swift; sourceTree = "<group>"; };
+		2A8423EB2AB0974A00D9A8A3 /* CountTheWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountTheWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8423EE2AB0974A00D9A8A3 /* CountTheWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldApp.swift; sourceTree = "<group>"; };
 		2A8423F02AB0974A00D9A8A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A8423F22AB0974A00D9A8A3 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		2A8423F42AB0974C00D9A8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A8423F72AB0974C00D9A8A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2A8423F92AB0974C00D9A8A3 /* CountIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountIt.entitlements; sourceTree = "<group>"; };
+		2A8423F92AB0974C00D9A8A3 /* CountTheWorld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountTheWorld.entitlements; sourceTree = "<group>"; };
 		2A8423FA2AB0974C00D9A8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A8423FF2AB0974D00D9A8A3 /* CountItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A8424032AB0974D00D9A8A3 /* CountItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItTests.swift; sourceTree = "<group>"; };
-		2A8424092AB0974D00D9A8A3 /* CountItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A84240D2AB0974D00D9A8A3 /* CountItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItUITests.swift; sourceTree = "<group>"; };
-		2A84240F2AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRowItem.swift; sourceTree = "<group>"; };
+		2A8423FF2AB0974D00D9A8A3 /* CountTheWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountTheWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8424032AB0974D00D9A8A3 /* CountTheWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldTests.swift; sourceTree = "<group>"; };
+		2A8424092AB0974D00D9A8A3 /* CountTheWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountTheWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A84240D2AB0974D00D9A8A3 /* CountTheWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldUITests.swift; sourceTree = "<group>"; };
+		2A84240F2AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A84241C2AB0988800D9A8A3 /* CounterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRow.swift; sourceTree = "<group>"; };
 		2A84241E2AB099B800D9A8A3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarComponents.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,9 +113,9 @@
 		2A8423E22AB0974A00D9A8A3 = {
 			isa = PBXGroup;
 			children = (
-				2A8423ED2AB0974A00D9A8A3 /* CountIt */,
-				2A8424022AB0974D00D9A8A3 /* CountItTests */,
-				2A84240C2AB0974D00D9A8A3 /* CountItUITests */,
+				2A8423ED2AB0974A00D9A8A3 /* CountTheWorld */,
+				2A8424022AB0974D00D9A8A3 /* CountTheWorldTests */,
+				2A84240C2AB0974D00D9A8A3 /* CountTheWorldUITests */,
 				2A8423EC2AB0974A00D9A8A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,26 +123,26 @@
 		2A8423EC2AB0974A00D9A8A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A8423EB2AB0974A00D9A8A3 /* CountIt.app */,
-				2A8423FF2AB0974D00D9A8A3 /* CountItTests.xctest */,
-				2A8424092AB0974D00D9A8A3 /* CountItUITests.xctest */,
+				2A8423EB2AB0974A00D9A8A3 /* CountTheWorld.app */,
+				2A8423FF2AB0974D00D9A8A3 /* CountTheWorldTests.xctest */,
+				2A8424092AB0974D00D9A8A3 /* CountTheWorldUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A8423ED2AB0974A00D9A8A3 /* CountIt */ = {
+		2A8423ED2AB0974A00D9A8A3 /* CountTheWorld */ = {
 			isa = PBXGroup;
 			children = (
 				2A8424222AB099D400D9A8A3 /* Extensions */,
 				2A8424212AB099CF00D9A8A3 /* Models */,
 				2A8424202AB099C500D9A8A3 /* Views */,
-				2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */,
+				2A8423EE2AB0974A00D9A8A3 /* CountTheWorldApp.swift */,
 				2A8423F42AB0974C00D9A8A3 /* Assets.xcassets */,
-				2A8423F92AB0974C00D9A8A3 /* CountIt.entitlements */,
+				2A8423F92AB0974C00D9A8A3 /* CountTheWorld.entitlements */,
 				2A8423FA2AB0974C00D9A8A3 /* Info.plist */,
 				2A8423F62AB0974C00D9A8A3 /* Preview Content */,
 			);
-			path = CountIt;
+			path = CountTheWorld;
 			sourceTree = "<group>";
 		};
 		2A8423F62AB0974C00D9A8A3 /* Preview Content */ = {
@@ -153,28 +153,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2A8424022AB0974D00D9A8A3 /* CountItTests */ = {
+		2A8424022AB0974D00D9A8A3 /* CountTheWorldTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A8424032AB0974D00D9A8A3 /* CountItTests.swift */,
+				2A8424032AB0974D00D9A8A3 /* CountTheWorldTests.swift */,
 			);
-			path = CountItTests;
+			path = CountTheWorldTests;
 			sourceTree = "<group>";
 		};
-		2A84240C2AB0974D00D9A8A3 /* CountItUITests */ = {
+		2A84240C2AB0974D00D9A8A3 /* CountTheWorldUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2A84240D2AB0974D00D9A8A3 /* CountItUITests.swift */,
-				2A84240F2AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift */,
+				2A84240D2AB0974D00D9A8A3 /* CountTheWorldUITests.swift */,
+				2A84240F2AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift */,
 			);
-			path = CountItUITests;
+			path = CountTheWorldUITests;
 			sourceTree = "<group>";
 		};
 		2A8424202AB099C500D9A8A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2A8423F02AB0974A00D9A8A3 /* ContentView.swift */,
-				2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */,
+				2A84241C2AB0988800D9A8A3 /* CounterRow.swift */,
 				2A3767052AB9EC3200D5C189 /* CounterEditor.swift */,
 				2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */,
 			);
@@ -202,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A8423EA2AB0974A00D9A8A3 /* CountIt */ = {
+		2A8423EA2AB0974A00D9A8A3 /* CountTheWorld */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8424132AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountIt" */;
+			buildConfigurationList = 2A8424132AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorld" */;
 			buildPhases = (
 				2A8423E72AB0974A00D9A8A3 /* Sources */,
 				2A8423E82AB0974A00D9A8A3 /* Frameworks */,
@@ -216,14 +216,14 @@
 			);
 			dependencies = (
 			);
-			name = CountIt;
-			productName = CountIt;
-			productReference = 2A8423EB2AB0974A00D9A8A3 /* CountIt.app */;
+			name = CountTheWorld;
+			productName = CountTheWorld;
+			productReference = 2A8423EB2AB0974A00D9A8A3 /* CountTheWorld.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2A8423FE2AB0974D00D9A8A3 /* CountItTests */ = {
+		2A8423FE2AB0974D00D9A8A3 /* CountTheWorldTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8424162AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountItTests" */;
+			buildConfigurationList = 2A8424162AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorldTests" */;
 			buildPhases = (
 				2A8423FB2AB0974D00D9A8A3 /* Sources */,
 				2A8423FC2AB0974D00D9A8A3 /* Frameworks */,
@@ -234,14 +234,14 @@
 			dependencies = (
 				2A8424012AB0974D00D9A8A3 /* PBXTargetDependency */,
 			);
-			name = CountItTests;
-			productName = CountItTests;
-			productReference = 2A8423FF2AB0974D00D9A8A3 /* CountItTests.xctest */;
+			name = CountTheWorldTests;
+			productName = CountTheWorldTests;
+			productReference = 2A8423FF2AB0974D00D9A8A3 /* CountTheWorldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2A8424082AB0974D00D9A8A3 /* CountItUITests */ = {
+		2A8424082AB0974D00D9A8A3 /* CountTheWorldUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8424192AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountItUITests" */;
+			buildConfigurationList = 2A8424192AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorldUITests" */;
 			buildPhases = (
 				2A8424052AB0974D00D9A8A3 /* Sources */,
 				2A8424062AB0974D00D9A8A3 /* Frameworks */,
@@ -252,9 +252,9 @@
 			dependencies = (
 				2A84240B2AB0974D00D9A8A3 /* PBXTargetDependency */,
 			);
-			name = CountItUITests;
-			productName = CountItUITests;
-			productReference = 2A8424092AB0974D00D9A8A3 /* CountItUITests.xctest */;
+			name = CountTheWorldUITests;
+			productName = CountTheWorldUITests;
+			productReference = 2A8424092AB0974D00D9A8A3 /* CountTheWorldUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A8423E62AB0974A00D9A8A3 /* Build configuration list for PBXProject "CountIt" */;
+			buildConfigurationList = 2A8423E62AB0974A00D9A8A3 /* Build configuration list for PBXProject "CountTheWorld" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -293,9 +293,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A8423EA2AB0974A00D9A8A3 /* CountIt */,
-				2A8423FE2AB0974D00D9A8A3 /* CountItTests */,
-				2A8424082AB0974D00D9A8A3 /* CountItUITests */,
+				2A8423EA2AB0974A00D9A8A3 /* CountTheWorld */,
+				2A8423FE2AB0974D00D9A8A3 /* CountTheWorldTests */,
+				2A8424082AB0974D00D9A8A3 /* CountTheWorldUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,8 +337,8 @@
 				2A84241F2AB099B800D9A8A3 /* Color.swift in Sources */,
 				2A4AD6F52AD21BF3003D3A5D /* CounterChangeEvent.swift in Sources */,
 				2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */,
-				2A84241D2AB0988800D9A8A3 /* CounterRowItem.swift in Sources */,
-				2A8423EF2AB0974A00D9A8A3 /* CountItApp.swift in Sources */,
+				2A84241D2AB0988800D9A8A3 /* CounterRow.swift in Sources */,
+				2A8423EF2AB0974A00D9A8A3 /* CountTheWorldApp.swift in Sources */,
 				2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8424042AB0974D00D9A8A3 /* CountItTests.swift in Sources */,
+				2A8424042AB0974D00D9A8A3 /* CountTheWorldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84240E2AB0974D00D9A8A3 /* CountItUITests.swift in Sources */,
-				2A8424102AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift in Sources */,
+				2A84240E2AB0974D00D9A8A3 /* CountTheWorldUITests.swift in Sources */,
+				2A8424102AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,12 +365,12 @@
 /* Begin PBXTargetDependency section */
 		2A8424012AB0974D00D9A8A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A8423EA2AB0974A00D9A8A3 /* CountIt */;
+			target = 2A8423EA2AB0974A00D9A8A3 /* CountTheWorld */;
 			targetProxy = 2A8424002AB0974D00D9A8A3 /* PBXContainerItemProxy */;
 		};
 		2A84240B2AB0974D00D9A8A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A8423EA2AB0974A00D9A8A3 /* CountIt */;
+			target = 2A8423EA2AB0974A00D9A8A3 /* CountTheWorld */;
 			targetProxy = 2A84240A2AB0974D00D9A8A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -501,14 +501,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CountIt/CountIt.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CountTheWorld/CountTheWorld.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CountIt/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CountTheWorld/Preview Content\"";
 				DEVELOPMENT_TEAM = 5CHT5PKMHR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CountIt/Info.plist;
+				INFOPLIST_FILE = CountTheWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Count the World";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -519,7 +521,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountIt;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -536,14 +538,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CountIt/CountIt.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CountTheWorld/CountTheWorld.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CountIt/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CountTheWorld/Preview Content\"";
 				DEVELOPMENT_TEAM = 5CHT5PKMHR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CountIt/Info.plist;
+				INFOPLIST_FILE = CountTheWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Count the World";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -554,7 +558,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountIt;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -576,12 +580,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountItTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountIt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountIt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountTheWorld.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountTheWorld";
 			};
 			name = Debug;
 		};
@@ -596,12 +600,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountItTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountIt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountIt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountTheWorld.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountTheWorld";
 			};
 			name = Release;
 		};
@@ -614,12 +618,12 @@
 				DEVELOPMENT_TEAM = 5CHT5PKMHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountItUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CountIt;
+				TEST_TARGET_NAME = CountTheWorld;
 			};
 			name = Debug;
 		};
@@ -632,19 +636,19 @@
 				DEVELOPMENT_TEAM = 5CHT5PKMHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountItUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountTheWorldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CountIt;
+				TEST_TARGET_NAME = CountTheWorld;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A8423E62AB0974A00D9A8A3 /* Build configuration list for PBXProject "CountIt" */ = {
+		2A8423E62AB0974A00D9A8A3 /* Build configuration list for PBXProject "CountTheWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A8424112AB0974D00D9A8A3 /* Debug */,
@@ -653,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A8424132AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountIt" */ = {
+		2A8424132AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A8424142AB0974D00D9A8A3 /* Debug */,
@@ -662,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A8424162AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountItTests" */ = {
+		2A8424162AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A8424172AB0974D00D9A8A3 /* Debug */,
@@ -671,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A8424192AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountItUITests" */ = {
+		2A8424192AB0974D00D9A8A3 /* Build configuration list for PBXNativeTarget "CountTheWorldUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A84241A2AB0974D00D9A8A3 /* Debug */,
