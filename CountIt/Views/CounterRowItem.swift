@@ -39,18 +39,19 @@ struct CounterRowItem: View {
                 }
                 .contentShape(RoundedRectangle(cornerRadius: 5))
                 .foregroundStyle(foregroundColor)
-                .onTapGesture { location in
-                    if location.x < geometry.size.width / 2 {
-                        counter.decrement()
-                    } else {
-                        counter.increment()
-                    }
+                .onTapGesture {
+                    increment(up: $0.x >= geometry.size.width / 2)
                 }
             }
         }
         .listRowBackground(counter.color)
         .padding(20)
         .padding(.bottom)
+    }
+
+    private func increment(up: Bool) {
+        counter.count += up ? counter.incrementStep : -1 * counter.incrementStep
+        modelContext.insert(CounterChangeEvent(counter: counter, newValue: counter.count))
     }
 }
 

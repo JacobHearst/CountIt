@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A1CFAC02B29E8A000DEA281 /* Date+CalendarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */; };
+		2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */; };
 		2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3767052AB9EC3200D5C189 /* CounterEditor.swift */; };
 		2A4AD6F52AD21BF3003D3A5D /* CounterChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */; };
-		2A4AD6F62AD21C85003D3A5D /* CounterChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */; };
 		2A8423EF2AB0974A00D9A8A3 /* CountItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */; };
 		2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F02AB0974A00D9A8A3 /* ContentView.swift */; };
 		2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F22AB0974A00D9A8A3 /* Counter.swift */; };
@@ -22,11 +21,6 @@
 		2A84241D2AB0988800D9A8A3 /* CounterRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */; };
 		2A84241F2AB099B800D9A8A3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241E2AB099B800D9A8A3 /* Color.swift */; };
 		2ABCAACC2AED76F500FC1DB8 /* Date+CalendarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */; };
-		2AFF56232AB0A35B00D251DD /* CounterIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF56222AB0A35B00D251DD /* CounterIntentsExtension.swift */; };
-		2AFF56252AB0A35B00D251DD /* CounterIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF56242AB0A35B00D251DD /* CounterIntents.swift */; };
-		2AFF56292AB0A35B00D251DD /* CounterIntents.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 2AFF56202AB0A35B00D251DD /* CounterIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2AFF562D2AB0A39600D251DD /* CounterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8424352AB0A00D00D9A8A3 /* CounterProvider.swift */; };
-		2AFF562E2AB0A39E00D251DD /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F22AB0974A00D9A8A3 /* Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +37,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2A8423EA2AB0974A00D9A8A3;
 			remoteInfo = CountIt;
-		};
-		2AFF56272AB0A35B00D251DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A8423E32AB0974A00D9A8A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2AFF561F2AB0A35B00D251DD;
-			remoteInfo = CounterIntents;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,7 +57,6 @@
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				2AFF56292AB0A35B00D251DD /* CounterIntents.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,11 +64,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A3767052AB9EC3200D5C189 /* CounterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEditor.swift; sourceTree = "<group>"; };
 		2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterChangeEvent.swift; sourceTree = "<group>"; };
-		2A69F6FE2AC08B44000AF5B0 /* CountItWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
-		2A69F7082AC08B44000AF5B0 /* CountItWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		2A69F70A2AC08B44000AF5B0 /* CountItWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A8423EB2AB0974A00D9A8A3 /* CountIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8423EE2AB0974A00D9A8A3 /* CountItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItApp.swift; sourceTree = "<group>"; };
 		2A8423F02AB0974A00D9A8A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,13 +82,7 @@
 		2A84240F2AB0974D00D9A8A3 /* CountItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRowItem.swift; sourceTree = "<group>"; };
 		2A84241E2AB099B800D9A8A3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		2A8424352AB0A00D00D9A8A3 /* CounterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProvider.swift; sourceTree = "<group>"; };
 		2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarComponents.swift"; sourceTree = "<group>"; };
-		2AE4F71E2AB0B5C6004B4E82 /* CounterIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CounterIntents.entitlements; sourceTree = "<group>"; };
-		2AFF56202AB0A35B00D251DD /* CounterIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = CounterIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AFF56222AB0A35B00D251DD /* CounterIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterIntentsExtension.swift; sourceTree = "<group>"; };
-		2AFF56242AB0A35B00D251DD /* CounterIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterIntents.swift; sourceTree = "<group>"; };
-		2AFF56262AB0A35B00D251DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,42 +107,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AFF561D2AB0A35B00D251DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A69F6FD2AC08B44000AF5B0 /* CountItWatch Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				2A69F6FE2AC08B44000AF5B0 /* CountItWatch_Watch_AppTests.swift */,
-			);
-			path = "CountItWatch Watch AppTests";
-			sourceTree = "<group>";
-		};
-		2A69F7072AC08B44000AF5B0 /* CountItWatch Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2A69F7082AC08B44000AF5B0 /* CountItWatch_Watch_AppUITests.swift */,
-				2A69F70A2AC08B44000AF5B0 /* CountItWatch_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "CountItWatch Watch AppUITests";
-			sourceTree = "<group>";
-		};
 		2A8423E22AB0974A00D9A8A3 = {
 			isa = PBXGroup;
 			children = (
 				2A8423ED2AB0974A00D9A8A3 /* CountIt */,
 				2A8424022AB0974D00D9A8A3 /* CountItTests */,
 				2A84240C2AB0974D00D9A8A3 /* CountItUITests */,
-				2AFF56212AB0A35B00D251DD /* CounterIntents */,
-				2A69F6FD2AC08B44000AF5B0 /* CountItWatch Watch AppTests */,
-				2A69F7072AC08B44000AF5B0 /* CountItWatch Watch AppUITests */,
 				2A8423EC2AB0974A00D9A8A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,7 +126,6 @@
 				2A8423EB2AB0974A00D9A8A3 /* CountIt.app */,
 				2A8423FF2AB0974D00D9A8A3 /* CountItTests.xctest */,
 				2A8424092AB0974D00D9A8A3 /* CountItUITests.xctest */,
-				2AFF56202AB0A35B00D251DD /* CounterIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +176,7 @@
 				2A8423F02AB0974A00D9A8A3 /* ContentView.swift */,
 				2A84241C2AB0988800D9A8A3 /* CounterRowItem.swift */,
 				2A3767052AB9EC3200D5C189 /* CounterEditor.swift */,
+				2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,18 +199,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2AFF56212AB0A35B00D251DD /* CounterIntents */ = {
-			isa = PBXGroup;
-			children = (
-				2AE4F71E2AB0B5C6004B4E82 /* CounterIntents.entitlements */,
-				2A8424352AB0A00D00D9A8A3 /* CounterProvider.swift */,
-				2AFF56222AB0A35B00D251DD /* CounterIntentsExtension.swift */,
-				2AFF56242AB0A35B00D251DD /* CounterIntents.swift */,
-				2AFF56262AB0A35B00D251DD /* Info.plist */,
-			);
-			path = CounterIntents;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,7 +215,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2AFF56282AB0A35B00D251DD /* PBXTargetDependency */,
 			);
 			name = CountIt;
 			productName = CountIt;
@@ -319,23 +257,6 @@
 			productReference = 2A8424092AB0974D00D9A8A3 /* CountItUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		2AFF561F2AB0A35B00D251DD /* CounterIntents */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2AFF562A2AB0A35B00D251DD /* Build configuration list for PBXNativeTarget "CounterIntents" */;
-			buildPhases = (
-				2AFF561C2AB0A35B00D251DD /* Sources */,
-				2AFF561D2AB0A35B00D251DD /* Frameworks */,
-				2AFF561E2AB0A35B00D251DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CounterIntents;
-			productName = CounterIntents;
-			productReference = 2AFF56202AB0A35B00D251DD /* CounterIntents.appex */;
-			productType = "com.apple.product-type.extensionkit-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -357,9 +278,6 @@
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 2A8423EA2AB0974A00D9A8A3;
 					};
-					2AFF561F2AB0A35B00D251DD = {
-						CreatedOnToolsVersion = 15.0;
-					};
 				};
 			};
 			buildConfigurationList = 2A8423E62AB0974A00D9A8A3 /* Build configuration list for PBXProject "CountIt" */;
@@ -378,7 +296,6 @@
 				2A8423EA2AB0974A00D9A8A3 /* CountIt */,
 				2A8423FE2AB0974D00D9A8A3 /* CountItTests */,
 				2A8424082AB0974D00D9A8A3 /* CountItUITests */,
-				2AFF561F2AB0A35B00D251DD /* CounterIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -407,13 +324,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AFF561E2AB0A35B00D251DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -429,6 +339,7 @@
 				2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */,
 				2A84241D2AB0988800D9A8A3 /* CounterRowItem.swift in Sources */,
 				2A8423EF2AB0974A00D9A8A3 /* CountItApp.swift in Sources */,
+				2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,19 +360,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AFF561C2AB0A35B00D251DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2AFF562E2AB0A39E00D251DD /* Counter.swift in Sources */,
-				2AFF56252AB0A35B00D251DD /* CounterIntents.swift in Sources */,
-				2AFF56232AB0A35B00D251DD /* CounterIntentsExtension.swift in Sources */,
-				2A4AD6F62AD21C85003D3A5D /* CounterChangeEvent.swift in Sources */,
-				2AFF562D2AB0A39600D251DD /* CounterProvider.swift in Sources */,
-				2A1CFAC02B29E8A000DEA281 /* Date+CalendarComponents.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -474,11 +372,6 @@
 			isa = PBXTargetDependency;
 			target = 2A8423EA2AB0974A00D9A8A3 /* CountIt */;
 			targetProxy = 2A84240A2AB0974D00D9A8A3 /* PBXContainerItemProxy */;
-		};
-		2AFF56282AB0A35B00D251DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2AFF561F2AB0A35B00D251DD /* CounterIntents */;
-			targetProxy = 2AFF56272AB0A35B00D251DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -748,58 +641,6 @@
 			};
 			name = Release;
 		};
-		2AFF562B2AB0A35B00D251DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CounterIntents/CounterIntents.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5CHT5PKMHR;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CounterIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CounterIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountIt.CounterIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2AFF562C2AB0A35B00D251DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CounterIntents/CounterIntents.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5CHT5PKMHR;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CounterIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CounterIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.CountIt.CounterIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -835,15 +676,6 @@
 			buildConfigurations = (
 				2A84241A2AB0974D00D9A8A3 /* Debug */,
 				2A84241B2AB0974D00D9A8A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2AFF562A2AB0A35B00D251DD /* Build configuration list for PBXNativeTarget "CounterIntents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2AFF562B2AB0A35B00D251DD /* Debug */,
-				2AFF562C2AB0A35B00D251DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -48,11 +48,7 @@ final class Counter {
         }
     }
 
-    private(set) var count: Int {
-        didSet {
-            history.append(CounterChangeEvent(counter: self, newValue: count))
-        }
-    }
+    var count: Int
 
     @Relationship(deleteRule: .cascade, inverse: \CounterChangeEvent.counter)
     private(set) var history = [CounterChangeEvent]()
@@ -75,14 +71,6 @@ final class Counter {
         self.red = colorComponents.red
         self.green = colorComponents.green
         self.blue = colorComponents.blue
-    }
-
-    func increment() {
-        count += incrementStep
-    }
-
-    func decrement() {
-        count -= incrementStep
     }
 
     func reset() {

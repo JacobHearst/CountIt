@@ -20,6 +20,9 @@ struct ContentView: View {
                             Button("Edit") {
                                 selectedCounter = counter
                             }
+                            NavigationLink("History") {
+                                HistoryView(counter: counter)
+                            }
                         }
                 }
                 .onDelete(perform: deleteItems)
