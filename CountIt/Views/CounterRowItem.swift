@@ -21,8 +21,10 @@ struct CounterRowItem: View {
         Group {
             GeometryReader { geometry in
                 HStack {
-                    Image(systemName: "minus")
-                        .help("Decrement the counter")
+                    if !counter.disallowSubtraction {
+                        Image(systemName: "minus")
+                            .help("Decrement the counter")
+                    }
 
                     Spacer()
 
@@ -34,13 +36,15 @@ struct CounterRowItem: View {
 
                     Spacer()
 
-                    Image(systemName: "plus")
-                        .help("Increment the counter")
+                    if !counter.disallowSubtraction {
+                        Image(systemName: "plus")
+                            .help("Increment the counter")
+                    }
                 }
                 .contentShape(RoundedRectangle(cornerRadius: 5))
                 .foregroundStyle(foregroundColor)
                 .onTapGesture {
-                    increment(up: $0.x >= geometry.size.width / 2)
+                    increment(isNegative: $0.x <= geometry.size.width / 2)
                 }
             }
         }
@@ -49,8 +53,8 @@ struct CounterRowItem: View {
         .padding(.bottom)
     }
 
-    private func increment(up: Bool) {
-        counter.count += up ? counter.incrementStep : -1 * counter.incrementStep
+    private func increment(isNegative: Bool) {
+        counter.count += isNegative && !counter.disallowSubtraction ? -1 * counter.incrementStep : counter.incrementStep
         modelContext.insert(CounterChangeEvent(counter: counter, newValue: counter.count))
     }
 }

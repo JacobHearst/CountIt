@@ -13,6 +13,8 @@ struct CounterEditor: View {
     @State private var increment = 1
     @State private var interval: Counter.Interval = .Never
     @State private var color = Color.random()
+    @State private var disallowSubtraction = false
+    @State private var counterValue = 0
 
     let counter: Counter?
 
@@ -20,11 +22,16 @@ struct CounterEditor: View {
         counter == nil ? "Add Counter" : "Edit Counter"
     }
 
+    private var counterValueLabel: String {
+        counter == nil ? "Initial value": "Current value"
+    }
+
     var body: some View {
         NavigationStack {
             Form {
                 Section("Required") {
                     TextField("Counter name", text: $name)
+
                     Stepper(value: $increment) {
                         HStack {
                             Text("Increment by:")
@@ -32,18 +39,30 @@ struct CounterEditor: View {
                             Text(increment.description)
                                 .padding(.trailing)
                         }
+                    } onEditingChanged: { _ in
+                        clampInterval()
                     }
+
+                    ColorPicker("Counter color", selection: $color, supportsOpacity: false)
                 }
                 Section("Optional") {
+                    Stepper(value: $counterValue, step: increment) {
+                        HStack {
+                            Text(counterValueLabel)
+                            Spacer()
+                            Text(counterValue.description)
+                                .padding(.trailing)
+                        }
+                    }
                     Picker("Reset count every:", selection: $interval) {
                         ForEach(Counter.Interval.allCases, id: \.rawValue) {
                             Text($0.rawValue).tag($0)
                         }
                     }
-
-                    ColorPicker("Counter color", selection: $color, supportsOpacity: false)
+                    Toggle("Disallow subtraction", isOn: $disallowSubtraction)
                 }
             }
+            .onChange(of: disallowSubtraction, clampInterval)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(editorTitle)
@@ -69,8 +88,14 @@ struct CounterEditor: View {
                 increment = counter.incrementStep
                 color = counter.color
                 interval = counter.interval
+                counterValue = counter.count
+                disallowSubtraction = counter.disallowSubtraction
             }
         }
+    }
+
+    private func clampInterval() {
+        increment = max(1, increment)
     }
 
     private func save() {
@@ -84,9 +109,18 @@ struct CounterEditor: View {
             counter.red = colorComponents.red
             counter.blue = colorComponents.blue
             counter.green = colorComponents.green
+            counter.count = counterValue
+            counter.disallowSubtraction = disallowSubtraction
         } else {
             // Make a new counter
-            let newCounter = Counter(name: name, incrementStep: increment, interval: interval, colorComponents: colorComponents)
+            let newCounter = Counter(
+                name: name,
+                incrementStep: increment,
+                count: counterValue,
+                interval: interval,
+                colorComponents: colorComponents,
+                disallowSubtraction: disallowSubtraction
+            )
             modelContext.insert(newCounter)
         }
     }

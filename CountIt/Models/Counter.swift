@@ -14,6 +14,7 @@ final class Counter {
     var name: String
     var incrementStep: Int
     var interval: Interval
+    var disallowSubtraction: Bool
 
     var red: Float
     var green: Float
@@ -60,7 +61,8 @@ final class Counter {
         count: Int = 0,
         id: UUID = UUID(),
         interval: Interval = .Never,
-        colorComponents: Color.Resolved
+        colorComponents: Color.Resolved,
+        disallowSubtraction: Bool = false
     ) {
         self.name = name
         self.incrementStep = incrementStep
@@ -71,10 +73,7 @@ final class Counter {
         self.red = colorComponents.red
         self.green = colorComponents.green
         self.blue = colorComponents.blue
-    }
-
-    func reset() {
-        count = 0
+        self.disallowSubtraction = disallowSubtraction
     }
 
     enum Interval: String, CaseIterable, Codable {
