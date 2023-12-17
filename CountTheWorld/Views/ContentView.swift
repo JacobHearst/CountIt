@@ -15,15 +15,17 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(counters) { counter in
-                    CounterRow(counter: counter)
-                        .contextMenu {
-                            Button("Edit") {
-                                selectedCounter = counter
-                            }
-                            NavigationLink("History") {
-                                HistoryView(history: counter.history)
-                            }
+                    CounterRow(counter: counter) {
+                        selectedCounter = counter
+                    }
+                    .contextMenu {
+                        Button("Edit") {
+                            selectedCounter = counter
                         }
+                        NavigationLink("History") {
+                            HistoryView(history: counter.history)
+                        }
+                    }
                 }
                 .onDelete(perform: deleteItems)
             }
