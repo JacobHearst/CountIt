@@ -35,7 +35,7 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    AddCounterButton(isActive: $showCounterCreator)
+                    addCounterButton
                 }
             }
             .sheet(item: $selectedCounter) {
@@ -49,7 +49,7 @@ struct ContentView: View {
                     ContentUnavailableView {
                         Label("No counters found", systemImage: "questionmark.circle")
                     } description: {
-                        AddCounterButton(isActive: $showCounterCreator)
+                        addCounterButton
                     }
                 }
             }
@@ -64,16 +64,12 @@ struct ContentView: View {
         }
     }
 
-    private struct AddCounterButton: View {
-        @Binding var isActive: Bool
-
-        var body: some View {
-            Button {
-                isActive = true
-            } label: {
-                Label("Create a counter", systemImage: "plus")
-                    .help("Create a counter")
-            }
+    private var addCounterButton: some View {
+        Button {
+            showCounterCreator = true
+        } label: {
+            Label("Create a counter", systemImage: "plus")
+                .help("Create a counter")
         }
     }
 }
