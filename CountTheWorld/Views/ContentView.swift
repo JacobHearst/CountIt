@@ -21,7 +21,7 @@ struct ContentView: View {
                                 selectedCounter = counter
                             }
                             NavigationLink("History") {
-                                HistoryView(counter: counter)
+                                HistoryView(history: counter.history)
                             }
                         }
                 }
@@ -95,7 +95,7 @@ struct ContentView: View {
     let container = try! ModelContainer(for: Counter.self, configurations: config)
 
     for i in 0..<3 {
-        let counter = Counter(name: i.description, colorComponents: .random())
+        let counter = Counter(name: "Test \(i)", colorComponents: .random())
         container.mainContext.insert(counter)
     }
 
@@ -108,7 +108,7 @@ struct ContentView: View {
     let container = try! ModelContainer(for: Counter.self, configurations: config)
 
     for i in 0..<4 {
-        let counter = Counter(name: i.description, colorComponents: .random())
+        let counter = Counter(name: "Test \(i)", colorComponents: .random())
         container.mainContext.insert(counter)
     }
 
@@ -121,7 +121,7 @@ struct ContentView: View {
     let container = try! ModelContainer(for: Counter.self, configurations: config)
 
     for i in 0..<50 {
-        let counter = Counter(name: i.description, colorComponents: .random())
+        let counter = Counter(name: "Test \(i)", colorComponents: .random())
         container.mainContext.insert(counter)
     }
 

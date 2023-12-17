@@ -12,6 +12,5 @@ struct CountTheWorldApp: App {
             ContentView()
         }
         .modelContainer(for: Counter.self)
-        .modelContainer(for: Counter.ChangeEvent.self)
     }
 }

@@ -9,22 +9,16 @@ import SwiftData
 struct HistoryView: View {
     @State private var listMode = false
 
-    private var counter: Counter
-    private var timeline: [Counter.ChangeEvent]
-
-    init(counter: Counter) {
-        self.counter = counter
-        timeline = counter.history.sorted { $0.timestamp < $1.timestamp }
-    }
+    var history: Counter.History
 
     var body: some View {
         Group {
             if listMode {
-                List(timeline) { event in
+                List(history.events) { event in
                     Text("\(event.timestamp): \(event.newValue)")
                 }
             } else {
-                Chart(timeline) { event in
+                Chart(history.events) { event in
                     LineMark(x: .value("Date", event.timestamp), y: .value("Count", event.newValue))
                 }
             }

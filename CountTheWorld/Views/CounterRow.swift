@@ -6,15 +6,11 @@ import SwiftUI
 import SwiftData
 
 struct CounterRow: View {
-    @Environment(\.modelContext) private var modelContext
-    @Bindable var counter: Counter
-    private var counterEvents: Query<Counter.ChangeEvent, [Counter.ChangeEvent]>
-    private let foregroundColor: Color
+    @Environment(\.modelContext) var modelContext
+    var counter: Counter
 
-    init(counter: Counter) {
-        self.counter = counter
-        self.counterEvents = Query(filter: counter.changeEventPredicate)
-        foregroundColor = counter.color.isDark ? .white : .black
+    var currentCount: Int {
+        counter.history.events(for: counter.interval).last?.newValue ?? counter.count
     }
 
     var body: some View {
@@ -31,7 +27,7 @@ struct CounterRow: View {
                     VStack {
                         Text(counter.name)
                             .font(.headline)
-                        Text(counter.count.description)
+                        Text(currentCount.description)
                     }
 
                     Spacer()
@@ -42,10 +38,13 @@ struct CounterRow: View {
                     }
                 }
                 .contentShape(RoundedRectangle(cornerRadius: 5))
-                .foregroundStyle(foregroundColor)
-                .onTapGesture {
-                    let direction: Counter.IncrementDirection = $0.x <= geometry.size.width / 2 ? .down : .up
-                    increment(direction: direction)
+                .foregroundStyle(counter.color.foregroundColor)
+                .onTapGesture { location in
+                    if location.x >= geometry.size.width / 2 {
+                        counter.increment()
+                    } else {
+                        counter.decrement()
+                    }
                 }
             }
         }
@@ -53,20 +52,4 @@ struct CounterRow: View {
         .padding(20)
         .padding(.bottom)
     }
-
-    private func increment(direction: Counter.IncrementDirection) {
-        switch direction {
-        case .up:
-            counter.count += counter.incrementStep
-        case .down:
-            guard !counter.disallowSubtraction else { return }
-            counter.count -= counter.incrementStep
-        }
-
-        modelContext.insert(Counter.ChangeEvent(counter: counter, newValue: counter.count))
-    }
-}
-
-#Preview {
-    CounterRow(counter: Counter(name: "Test", colorComponents: Color.red.resolve(in: .init())))
 }

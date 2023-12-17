@@ -23,6 +23,10 @@ extension Color {
         let lum = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return lum < 0.5
     }
+
+    var foregroundColor: Color {
+        isDark ? .white : .black
+    }
 }
 
 extension Color.Resolved {

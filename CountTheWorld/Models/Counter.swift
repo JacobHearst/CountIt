@@ -10,49 +10,19 @@ import SwiftUI
 final class Counter {
     @Attribute(.unique) let id: UUID
     @Attribute(.unique) let createdAt: Date
-
     var name: String
+    var count: Int
     var incrementStep: Int
     var interval: Interval
     var disallowSubtraction: Bool
-
     var red: Float
     var green: Float
     var blue: Float
+    private(set) var history: History
 
     var color: Color {
         Color(red: Double(red), green: Double(green), blue: Double(blue))
     }
-
-    var changeEventPredicate: Predicate<ChangeEvent> {
-        let now = Date()
-        switch interval {
-        case .Never:
-            return #Predicate { _ in true }
-        case .Day:
-            return #Predicate {
-                $0.dayOfMonth == now.dayOfMonth
-            }
-        case .Week:
-            return #Predicate { event in
-                event.weekOfYear == now.weekOfYear &&
-                event.yearForWeekOfYear == now.yearForWeekOfYear
-            }
-        case .Month:
-            return #Predicate {
-                $0.month == now.month && $0.year == now.year
-            }
-        case .Year:
-            return #Predicate {
-                $0.year == now.year
-            }
-        }
-    }
-
-    var count: Int
-
-    @Relationship(deleteRule: .cascade, inverse: \ChangeEvent.counter)
-    private(set) var history = [ChangeEvent]()
 
     init(
         name: String,
@@ -74,13 +44,21 @@ final class Counter {
         self.green = colorComponents.green
         self.blue = colorComponents.blue
         self.disallowSubtraction = disallowSubtraction
+        self.history = History()
+    }
+
+    func increment() {
+        count += incrementStep
+        history.record(value: count)
+    }
+
+    func decrement() {
+        guard !disallowSubtraction else { return }
+        count -= incrementStep
+        history.record(value: count)
     }
 
     enum Interval: String, CaseIterable, Codable {
         case Never, Day, Week, Month, Year
-    }
-
-    enum IncrementDirection {
-        case up, down
     }
 }

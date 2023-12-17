@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */; };
 		2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3767052AB9EC3200D5C189 /* CounterEditor.swift */; };
-		2A4AD6F52AD21BF3003D3A5D /* CounterChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */; };
 		2A8423EF2AB0974A00D9A8A3 /* CountTheWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423EE2AB0974A00D9A8A3 /* CountTheWorldApp.swift */; };
 		2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F02AB0974A00D9A8A3 /* ContentView.swift */; };
 		2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8423F22AB0974A00D9A8A3 /* Counter.swift */; };
@@ -20,7 +19,8 @@
 		2A8424102AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84240F2AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift */; };
 		2A84241D2AB0988800D9A8A3 /* CounterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241C2AB0988800D9A8A3 /* CounterRow.swift */; };
 		2A84241F2AB099B800D9A8A3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A84241E2AB099B800D9A8A3 /* Color.swift */; };
-		2ABCAACC2AED76F500FC1DB8 /* Date+CalendarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */; };
+		2AEC0B4B2B2E6D020079F952 /* CounterHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC0B4A2B2E6D020079F952 /* CounterHistory.swift */; };
+		2AEC0B4D2B2E6DEB0079F952 /* Calendar+componentsMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC0B4C2B2E6DEB0079F952 /* Calendar+componentsMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 /* Begin PBXFileReference section */
 		2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A3767052AB9EC3200D5C189 /* CounterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEditor.swift; sourceTree = "<group>"; };
-		2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterChangeEvent.swift; sourceTree = "<group>"; };
 		2A8423EB2AB0974A00D9A8A3 /* CountTheWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountTheWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8423EE2AB0974A00D9A8A3 /* CountTheWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldApp.swift; sourceTree = "<group>"; };
 		2A8423F02AB0974A00D9A8A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,7 +81,8 @@
 		2A84240F2AB0974D00D9A8A3 /* CountTheWorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTheWorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A84241C2AB0988800D9A8A3 /* CounterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRow.swift; sourceTree = "<group>"; };
 		2A84241E2AB099B800D9A8A3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarComponents.swift"; sourceTree = "<group>"; };
+		2AEC0B4A2B2E6D020079F952 /* CounterHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterHistory.swift; sourceTree = "<group>"; };
+		2AEC0B4C2B2E6DEB0079F952 /* Calendar+componentsMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+componentsMatch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +173,8 @@
 		2A8424202AB099C500D9A8A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A8423F02AB0974A00D9A8A3 /* ContentView.swift */,
 				2A84241C2AB0988800D9A8A3 /* CounterRow.swift */,
+				2A8423F02AB0974A00D9A8A3 /* ContentView.swift */,
 				2A3767052AB9EC3200D5C189 /* CounterEditor.swift */,
 				2A0A85D12B2A78E400FCDEA3 /* HistoryView.swift */,
 			);
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8423F22AB0974A00D9A8A3 /* Counter.swift */,
-				2A4AD6F42AD21BF3003D3A5D /* CounterChangeEvent.swift */,
+				2AEC0B4A2B2E6D020079F952 /* CounterHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2A84241E2AB099B800D9A8A3 /* Color.swift */,
-				2ABCAACB2AED76F500FC1DB8 /* Date+CalendarComponents.swift */,
+				2AEC0B4C2B2E6DEB0079F952 /* Calendar+componentsMatch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,11 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3767062AB9EC3200D5C189 /* CounterEditor.swift in Sources */,
-				2ABCAACC2AED76F500FC1DB8 /* Date+CalendarComponents.swift in Sources */,
 				2A8423F12AB0974A00D9A8A3 /* ContentView.swift in Sources */,
 				2A84241F2AB099B800D9A8A3 /* Color.swift in Sources */,
-				2A4AD6F52AD21BF3003D3A5D /* CounterChangeEvent.swift in Sources */,
+				2AEC0B4D2B2E6DEB0079F952 /* Calendar+componentsMatch.swift in Sources */,
 				2A8423F32AB0974A00D9A8A3 /* Counter.swift in Sources */,
+				2AEC0B4B2B2E6D020079F952 /* CounterHistory.swift in Sources */,
 				2A84241D2AB0988800D9A8A3 /* CounterRow.swift in Sources */,
 				2A8423EF2AB0974A00D9A8A3 /* CountTheWorldApp.swift in Sources */,
 				2A0A85D22B2A78E400FCDEA3 /* HistoryView.swift in Sources */,
