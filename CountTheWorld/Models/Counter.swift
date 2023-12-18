@@ -32,7 +32,8 @@ final class Counter {
         id: UUID = UUID(),
         interval: Interval = .Never,
         colorComponents: Color.Resolved,
-        disallowSubtraction: Bool = false
+        disallowSubtraction: Bool = false,
+        history: History = History()
     ) {
         self.name = name
         self.incrementStep = incrementStep
@@ -44,18 +45,26 @@ final class Counter {
         self.green = colorComponents.green
         self.blue = colorComponents.blue
         self.disallowSubtraction = disallowSubtraction
-        self.history = History()
+        self.history = history
+
+        if count != 0, history.events.isEmpty {
+            record(change: count)
+        }
     }
 
     func increment() {
         count += incrementStep
-        history.record(value: count)
+        record(change: incrementStep)
     }
 
     func decrement() {
         guard !disallowSubtraction else { return }
         count -= incrementStep
-        history.record(value: count)
+        record(change: incrementStep * -1)
+    }
+
+    private func record(change: Int) {
+        history.events.append(History.Event(newTotal: count, change: change))
     }
 
     enum Interval: String, CaseIterable, Codable {

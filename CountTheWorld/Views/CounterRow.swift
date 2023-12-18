@@ -11,10 +11,6 @@ struct CounterRow: View {
     var counter: Counter
     var onSelect: () -> Void
 
-    var currentCount: Int {
-        counter.history.events(for: counter.interval).last?.newValue ?? counter.count
-    }
-
     var body: some View {
         GeometryReader { geometry in
             HStack {
@@ -28,7 +24,7 @@ struct CounterRow: View {
                 VStack {
                     Text(counter.name)
                         .font(.headline)
-                    Text(currentCount.description)
+                    Text(counter.history.events(for: counter.interval).sum.description)
                 }
 
                 Spacer()

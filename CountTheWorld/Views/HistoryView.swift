@@ -15,11 +15,11 @@ struct HistoryView: View {
         Group {
             if listMode {
                 List(history.events) { event in
-                    Text("\(label(date: event.timestamp)): \(event.newValue)")
+                    Text("\(label(date: event.timestamp)): \(event.newTotal)")
                 }
             } else {
                 Chart(history.events) { event in
-                    LineMark(x: .value("Date", event.timestamp), y: .value("Count", event.newValue))
+                    LineMark(x: .value("Date", event.timestamp), y: .value("Count", event.newTotal))
                 }.padding()
             }
         }

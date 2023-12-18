@@ -8,10 +8,6 @@ extension Counter {
     struct History: Codable {
         var events = [Event]()
 
-        mutating func record(value: Int) {
-            events.append(Event(newValue: value))
-        }
-
         func events(for interval: Interval) -> [Event] {
             let components: [Calendar.Component] = switch interval {
             case .Never:
@@ -35,12 +31,22 @@ extension Counter {
 extension Counter.History {
     struct Event: Codable, Identifiable {
         var id: Date { timestamp }
-        let newValue: Int
+        let change: Int
+        let newTotal: Int
         let timestamp: Date
 
-        init(timestamp: Date = Date(), newValue: Int) {
+        init(timestamp: Date = Date(), newTotal: Int, change: Int) {
             self.timestamp = timestamp
-            self.newValue = newValue
+            self.newTotal = newTotal
+            self.change = change
+        }
+    }
+}
+
+extension [Counter.History.Event] {
+    var sum: Int {
+        reduce(0) { partialResult, event in
+            partialResult + event.change
         }
     }
 }
