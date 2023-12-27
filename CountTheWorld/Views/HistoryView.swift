@@ -9,7 +9,7 @@ import SwiftData
 struct HistoryView: View {
     @State private var listMode = false
 
-    var history: [Counter.History.Event]
+    var history: Counter.History
     var buckets: [EventBucket]
 
     var body: some View {
@@ -50,7 +50,7 @@ struct HistoryView: View {
     let twoDaysAgo = today.subtracting(days: 2)
     let threeDaysAgo = today.subtracting(days: 3)
 
-    let events: [Counter.History.Event] = [
+    let history: Counter.History = [
         .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 3, change: 1),
@@ -64,16 +64,15 @@ struct HistoryView: View {
         .init(timestamp: today, newTotal: 6, change: 1),
     ]
 
-    let history = Counter.History(events: events)
     let buckets = history.buckets(for: .day)
 
-    return HistoryView(history: history.events, buckets: buckets)
+    return HistoryView(history: history, buckets: buckets)
 }
 
 #Preview("One day") {
     let today = Date()
 
-    let events: [Counter.History.Event] = [
+    let history: Counter.History = [
         .init(timestamp: today, newTotal: 2, change: 1),
         .init(timestamp: today, newTotal: 3, change: 1),
         .init(timestamp: today, newTotal: 4, change: 1),
@@ -81,10 +80,9 @@ struct HistoryView: View {
         .init(timestamp: today, newTotal: 6, change: 1),
     ]
 
-    let history = Counter.History(events: events)
     let buckets = history.buckets(for: .day)
 
-    return HistoryView(history: history.events, buckets: buckets)
+    return HistoryView(history: history, buckets: buckets)
 }
 
 #Preview("One week") {
@@ -93,7 +91,7 @@ struct HistoryView: View {
     let twoDaysAgo = today.subtracting(weeks: 2)
     let threeDaysAgo = today.subtracting(weeks: 3)
 
-    let events: [Counter.History.Event] = [
+    let history: Counter.History = [
         .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 3, change: 1),
@@ -107,17 +105,16 @@ struct HistoryView: View {
         .init(timestamp: today, newTotal: 6, change: 1),
     ]
 
-    let history = Counter.History(events: events)
     let buckets = history.buckets(for: .week)
 
-    return HistoryView(history: history.events, buckets: buckets)
+    return HistoryView(history: history, buckets: buckets)
 }
 
 #Preview("One week+gap") {
     let today = Date()
     let threeDaysAgo = today.subtracting(weeks: 3)
 
-    let events: [Counter.History.Event] = [
+    let history: Counter.History = [
         .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
         .init(timestamp: threeDaysAgo, newTotal: 3, change: 1),
@@ -128,8 +125,7 @@ struct HistoryView: View {
         .init(timestamp: today, newTotal: 6, change: 1),
     ]
 
-    let history = Counter.History(events: events)
     let buckets = history.buckets(for: .week)
 
-    return HistoryView(history: history.events, buckets: buckets)
+    return HistoryView(history: history, buckets: buckets)
 }

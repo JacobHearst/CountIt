@@ -24,7 +24,7 @@ final class Counter {
         Color(red: Double(red), green: Double(green), blue: Double(blue))
     }
 
-    var eventsInInterval: [History.Event] {
+    var eventsInInterval: History {
         history.events(for: interval)
     }
 
@@ -74,7 +74,7 @@ final class Counter {
         self.disallowSubtraction = disallowSubtraction
         self.history = history
 
-        if count != 0, history.events.isEmpty {
+        if count != 0, history.isEmpty {
             record(change: count)
         }
     }
@@ -91,7 +91,7 @@ final class Counter {
     }
 
     private func record(change: Int) {
-        history.events.append(History.Event(timestamp: Date(), newTotal: count, change: change))
+        history.append(Event(timestamp: Date(), newTotal: count, change: change))
     }
 
     enum Interval: String, CaseIterable, Codable {

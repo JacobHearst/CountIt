@@ -7,7 +7,7 @@ import Foundation
 struct EventBucket: Identifiable, Equatable, Codable {
     var id: String { label }
     let label: String
-    let events: [Counter.History.Event]
+    let events: Counter.History
     let value: Int
 
     /// The date of the earliest event in this bucket
@@ -24,7 +24,7 @@ struct EventBucket: Identifiable, Equatable, Codable {
         events.last!.newTotal
     }
 
-    init?(label: String, events: [Counter.History.Event]) {
+    init?(label: String, events: Counter.History) {
         guard !events.isEmpty else { return nil }
 
         self.label = label

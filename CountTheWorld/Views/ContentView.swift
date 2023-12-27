@@ -23,7 +23,7 @@ struct ContentView: View {
                             selectedCounter = counter
                         }
                         NavigationLink("History") {
-                            HistoryView(history: counter.history.events, buckets: counter.buckets)
+                            HistoryView(history: counter.history, buckets: counter.buckets)
                         }
                     }
                 }
