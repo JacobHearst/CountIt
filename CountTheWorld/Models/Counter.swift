@@ -24,6 +24,33 @@ final class Counter {
         Color(red: Double(red), green: Double(green), blue: Double(blue))
     }
 
+    var eventsInInterval: [History.Event] {
+        history.events(for: interval)
+    }
+
+    var buckets: [EventBucket] {
+        switch interval {
+        case .Never:
+            if history.range < .oneWeek {
+                return history.buckets(for: .day)
+            } else if history.range < .oneMonth {
+                return history.buckets(for: .week)
+            } else if history.range < .oneYear {
+                return history.buckets(for: .month)
+            }
+
+            return history.buckets(for: .year)
+        case .Day:
+            return history.buckets(for: .day)
+        case .Week:
+            return history.buckets(for: .week)
+        case .Month:
+            return history.buckets(for: .month)
+        case .Year:
+            return history.buckets(for: .year)
+        }
+    }
+
     init(
         name: String,
         incrementStep: Int = 1,
@@ -64,7 +91,7 @@ final class Counter {
     }
 
     private func record(change: Int) {
-        history.events.append(History.Event(newTotal: count, change: change))
+        history.events.append(History.Event(timestamp: Date(), newTotal: count, change: change))
     }
 
     enum Interval: String, CaseIterable, Codable {

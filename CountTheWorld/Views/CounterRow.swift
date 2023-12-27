@@ -24,7 +24,7 @@ struct CounterRow: View {
                 VStack {
                     Text(counter.name)
                         .font(.headline)
-                    Text(counter.history.events(for: counter.interval).sum.description)
+                    Text(counter.eventsInInterval.sum.description)
                 }
 
                 Spacer()
