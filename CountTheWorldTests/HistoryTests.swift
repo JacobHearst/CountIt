@@ -12,17 +12,17 @@ final class HistoryTests: XCTestCase {
         let twoDaysAgo = today.subtracting(days: 2)
         let threeDaysAgo = today.subtracting(days: 3)
 
-        let bucket1Events: [Counter.History.Event] = [
+        let bucket1Events: [Counter.Event] = [
             .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 3, change: 1)
         ]
-        let bucket2Events: [Counter.History.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
-        let bucket3Events: [Counter.History.Event] = [
+        let bucket2Events: [Counter.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
+        let bucket3Events: [Counter.Event] = [
             .init(timestamp: yesterday, newTotal: 1, change: 1),
             .init(timestamp: yesterday, newTotal: 2, change: 1)
         ]
-        let bucket4Events: [Counter.History.Event] = [
+        let bucket4Events: [Counter.Event] = [
             .init(timestamp: today, newTotal: 2, change: 1),
             .init(timestamp: today, newTotal: 3, change: 1),
             .init(timestamp: today, newTotal: 4, change: 1),
@@ -31,10 +31,9 @@ final class HistoryTests: XCTestCase {
         ]
 
         let events = bucket1Events + bucket2Events + bucket3Events + bucket4Events
-        let history = Counter.History(events: events)
 
         // When
-        let buckets = history.buckets(for: .Day)
+        let buckets = events.buckets(for: .day)
 
         // Then
         let formatter = ISO8601DateFormatter()
@@ -45,10 +44,10 @@ final class HistoryTests: XCTestCase {
         let expBucket3Label = formatter.string(from: bucket3Events[0].timestamp)
         let expBucket4Label = formatter.string(from: bucket4Events[0].timestamp)
         let expectedBuckets: [EventBucket] = [
-            EventBucket(label: expBucket1Label, events: bucket1Events),
-            EventBucket(label: expBucket2Label, events: bucket2Events),
-            EventBucket(label: expBucket3Label, events: bucket3Events),
-            EventBucket(label: expBucket4Label, events: bucket4Events),
+            EventBucket(label: expBucket1Label, events: bucket1Events)!,
+            EventBucket(label: expBucket2Label, events: bucket2Events)!,
+            EventBucket(label: expBucket3Label, events: bucket3Events)!,
+            EventBucket(label: expBucket4Label, events: bucket4Events)!,
         ]
 
         XCTAssertEqual(buckets, expectedBuckets)
@@ -60,17 +59,17 @@ final class HistoryTests: XCTestCase {
         let twoDaysAgo = today.subtracting(weeks: 2)
         let threeDaysAgo = today.subtracting(weeks: 3)
 
-        let bucket1Events: [Counter.History.Event] = [
+        let bucket1Events: [Counter.Event] = [
             .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 3, change: 1)
         ]
-        let bucket2Events: [Counter.History.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
-        let bucket3Events: [Counter.History.Event] = [
+        let bucket2Events: [Counter.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
+        let bucket3Events: [Counter.Event] = [
             .init(timestamp: yesterday, newTotal: 1, change: 1),
             .init(timestamp: yesterday, newTotal: 2, change: 1)
         ]
-        let bucket4Events: [Counter.History.Event] = [
+        let bucket4Events: [Counter.Event] = [
             .init(timestamp: today, newTotal: 2, change: 1),
             .init(timestamp: today, newTotal: 3, change: 1),
             .init(timestamp: today, newTotal: 4, change: 1),
@@ -79,10 +78,9 @@ final class HistoryTests: XCTestCase {
         ]
 
         let events = bucket1Events + bucket2Events + bucket3Events + bucket4Events
-        let history = Counter.History(events: events)
 
         // When
-        let buckets = history.buckets(for: .Week)
+        let buckets = events.buckets(for: .week)
 
         // Then
         let formatter = ISO8601DateFormatter()
@@ -93,10 +91,10 @@ final class HistoryTests: XCTestCase {
         let expBucket3Label = formatter.string(from: bucket3Events[0].timestamp)
         let expBucket4Label = formatter.string(from: bucket4Events[0].timestamp)
         let expectedBuckets: [EventBucket] = [
-            EventBucket(label: expBucket1Label, events: bucket1Events),
-            EventBucket(label: expBucket2Label, events: bucket2Events),
-            EventBucket(label: expBucket3Label, events: bucket3Events),
-            EventBucket(label: expBucket4Label, events: bucket4Events),
+            EventBucket(label: expBucket1Label, events: bucket1Events)!,
+            EventBucket(label: expBucket2Label, events: bucket2Events)!,
+            EventBucket(label: expBucket3Label, events: bucket3Events)!,
+            EventBucket(label: expBucket4Label, events: bucket4Events)!,
         ]
 
         XCTAssertEqual(buckets, expectedBuckets)
@@ -108,17 +106,17 @@ final class HistoryTests: XCTestCase {
         let twoDaysAgo = today.subtracting(months: 2)
         let threeDaysAgo = today.subtracting(months: 3)
 
-        let bucket1Events: [Counter.History.Event] = [
+        let bucket1Events: [Counter.Event] = [
             .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 3, change: 1)
         ]
-        let bucket2Events: [Counter.History.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
-        let bucket3Events: [Counter.History.Event] = [
+        let bucket2Events: [Counter.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
+        let bucket3Events: [Counter.Event] = [
             .init(timestamp: yesterday, newTotal: 1, change: 1),
             .init(timestamp: yesterday, newTotal: 2, change: 1)
         ]
-        let bucket4Events: [Counter.History.Event] = [
+        let bucket4Events: [Counter.Event] = [
             .init(timestamp: today, newTotal: 2, change: 1),
             .init(timestamp: today, newTotal: 3, change: 1),
             .init(timestamp: today, newTotal: 4, change: 1),
@@ -127,10 +125,9 @@ final class HistoryTests: XCTestCase {
         ]
 
         let events = bucket1Events + bucket2Events + bucket3Events + bucket4Events
-        let history = Counter.History(events: events)
 
         // When
-        let buckets = history.buckets(for: .Month)
+        let buckets = events.buckets(for: .month)
 
         // Then
         let formatter = ISO8601DateFormatter()
@@ -141,10 +138,10 @@ final class HistoryTests: XCTestCase {
         let expBucket3Label = formatter.string(from: bucket3Events[0].timestamp)
         let expBucket4Label = formatter.string(from: bucket4Events[0].timestamp)
         let expectedBuckets: [EventBucket] = [
-            EventBucket(label: expBucket1Label, events: bucket1Events),
-            EventBucket(label: expBucket2Label, events: bucket2Events),
-            EventBucket(label: expBucket3Label, events: bucket3Events),
-            EventBucket(label: expBucket4Label, events: bucket4Events),
+            EventBucket(label: expBucket1Label, events: bucket1Events)!,
+            EventBucket(label: expBucket2Label, events: bucket2Events)!,
+            EventBucket(label: expBucket3Label, events: bucket3Events)!,
+            EventBucket(label: expBucket4Label, events: bucket4Events)!,
         ]
 
         XCTAssertEqual(buckets, expectedBuckets)
@@ -156,17 +153,17 @@ final class HistoryTests: XCTestCase {
         let twoDaysAgo = today.subtracting(years: 2)
         let threeDaysAgo = today.subtracting(years: 3)
 
-        let bucket1Events: [Counter.History.Event] = [
+        let bucket1Events: [Counter.Event] = [
             .init(timestamp: threeDaysAgo, newTotal: 1, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 2, change: 1),
             .init(timestamp: threeDaysAgo, newTotal: 3, change: 1)
         ]
-        let bucket2Events: [Counter.History.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
-        let bucket3Events: [Counter.History.Event] = [
+        let bucket2Events: [Counter.Event] = [.init(timestamp: twoDaysAgo, newTotal: 1, change: 1)]
+        let bucket3Events: [Counter.Event] = [
             .init(timestamp: yesterday, newTotal: 1, change: 1),
             .init(timestamp: yesterday, newTotal: 2, change: 1)
         ]
-        let bucket4Events: [Counter.History.Event] = [
+        let bucket4Events: [Counter.Event] = [
             .init(timestamp: today, newTotal: 2, change: 1),
             .init(timestamp: today, newTotal: 3, change: 1),
             .init(timestamp: today, newTotal: 4, change: 1),
@@ -175,10 +172,9 @@ final class HistoryTests: XCTestCase {
         ]
 
         let events = bucket1Events + bucket2Events + bucket3Events + bucket4Events
-        let history = Counter.History(events: events)
 
         // When
-        let buckets = history.buckets(for: .Year)
+        let buckets = events.buckets(for: .year)
 
         // Then
         let formatter = ISO8601DateFormatter()
@@ -189,10 +185,10 @@ final class HistoryTests: XCTestCase {
         let expBucket3Label = formatter.string(from: bucket3Events[0].timestamp)
         let expBucket4Label = formatter.string(from: bucket4Events[0].timestamp)
         let expectedBuckets: [EventBucket] = [
-            EventBucket(label: expBucket1Label, events: bucket1Events),
-            EventBucket(label: expBucket2Label, events: bucket2Events),
-            EventBucket(label: expBucket3Label, events: bucket3Events),
-            EventBucket(label: expBucket4Label, events: bucket4Events),
+            EventBucket(label: expBucket1Label, events: bucket1Events)!,
+            EventBucket(label: expBucket2Label, events: bucket2Events)!,
+            EventBucket(label: expBucket3Label, events: bucket3Events)!,
+            EventBucket(label: expBucket4Label, events: bucket4Events)!,
         ]
 
         XCTAssertEqual(buckets, expectedBuckets)
